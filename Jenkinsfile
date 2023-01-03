@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout git') {
             steps {
-               git branch: 'main', url: 'https://github.com/BiswajitMahato/RestAssuredTestNGFramework'
+               git branch: 'main', url: 'https://github.com/BiswajitMahato/RestAssuredTestNGFramework.git'
             }
         }
         
