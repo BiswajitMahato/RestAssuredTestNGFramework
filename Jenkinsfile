@@ -23,7 +23,7 @@ pipeline {
     }
    post {
         always {
-            emailext body: 'This is auto-generated mail from Jenkins ', recipientProviders: [contributor()], subject: 'Jenkins mail test', to: 'biswajitmahato1994@gmail.com'
+            emailext body: 'This is auto-generated mail from Jenkins ', subject: 'Jenkins mail test', to: 'biswajitmahato1994@gmail.com'
         }
     }
 }
