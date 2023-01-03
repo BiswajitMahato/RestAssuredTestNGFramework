@@ -4,22 +4,22 @@ pipeline {
         maven 'maven-3.8.6' 
     }
     stages {
-        stage('Checkout git') {
+        stage('Build') {
             steps {
-               git branch: 'main', url: 'https://github.com/BiswajitMahato/RestAssuredTestNGFramework.git'
+                echo "This is Build stage"
             }
         }
-        
-        stage ('Build & JUnit Test') {
+        stage('Test) {
             steps {
-                sh 'mvn install' 
-            }
-            post {
-               success {
-                    junit 'target/surefire-reports/**/*.xml'
-                }   
+                echo "This is Test stage"
             }
         }
+        stage('Deploy') {
+            steps {
+                echo "This is Deploy stage"
+            }
+        }
+ 
     }
    post {
         always {
