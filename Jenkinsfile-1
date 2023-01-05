@@ -1,0 +1,24 @@
+## ap-pbba-csi
+
+@Library('zapp-utilities@feature/TA4657306')
+
+continuousBuildBoot {
+    
+    maven_v = 'Maven 3.6.1'
+    java_v = 'jdk-11.0.5'
+    build_goal = 'clean install -Pdev-env-v4, jenkins -DskipTests'
+    test_goal = ''
+    it_test_goal = ''
+    sonar_goal = 'sonar:sonar -Psonar -Dsonar.sourceEncoding=ISO-8859-1 Dproject.reportingoutputEncoding=UFT-8,dev-env-v4 -Dsonar.projectKey=ap-pbba-csi -Dsonar.login=${sonar_credentials} -Djacoco.aggregate.reportPath.dir=$WORKSPACE/ap-pbba-csi/coverage'
+    target = 'develop'
+    branch = 'develop'
+    component = 'ap-pbba-csi'
+    env = 'cb'
+    agent = 'zapp-dev-env3'
+    db_timeout = '1'
+    ut_timeout = '7'
+    ansible_branch = 'develop'
+    lock_db = ''
+    modules = ["ap-pbba-csi"]
+    
+}
