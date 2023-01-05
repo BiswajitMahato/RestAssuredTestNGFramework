@@ -66,7 +66,10 @@ pipeline {
             
             ]
             
-            emailext body: "<b>This is auto-generated mail from Jenkins</b>", subject: 'Jenkins mail test', to: 'biswajitmahato1994@gmail.com'
-        }
+            emailext body: "<b>This is auto-generated mail from Jenkins</b><br>Project: ${env.JOB_NAME} <br>Build Number: {env.BUILD_NUMBER}",
+                     mimeType: "text/html",
+                     attachmentsPattern: "**/serenity-summary.html",
+                     subject: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - Project Cucumber Automation Report",
+                     to: "abc@gmail; xyz@abc.com"
     }
 }
